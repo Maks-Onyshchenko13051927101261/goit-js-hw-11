@@ -45,7 +45,7 @@ button {
   gap: 8px;
 }
 
-.input-search {
+.search-input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,14 +56,14 @@ button {
   padding-left: 16px;
   transition: background-color 250mcubic-bezier(0.4, 0, 0.2, 1); 
 }
-.input-search:hover {
+.search-input:hover {
   border: 1px solid #000000;
 }
-.input-search:focus {
+.search-input:focus {
   border: 1px solid #4e75ff;
 }
 
-.btm-submit {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,8 +73,8 @@ button {
   padding: 8px 16px;
   border-radius: 8px;
 }
-.btm-submit:hover,
-.btm-submit:focus {
+.button:hover,
+.button:focus {
   background-color: #6c8cff;
 }
 

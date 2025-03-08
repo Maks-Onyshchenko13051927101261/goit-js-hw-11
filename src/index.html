@@ -10,17 +10,16 @@
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
-      <input class="input-search" type="text" id="search" placeholder="Search images..." />
-      <button class="btm-submit" data-submit>Search</button>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <ul class="gallery loader">Loading images, please wait...</ul>
-    </div>
-    <script type="module" src="./main.js"></script>
+  <div class="container">
+    <form class="form">
+      <input class="search-input" type="text" name="searchField" placeholder="Search images..." />
+      <button class="button" type="submit">Search</button>
+    </form>
+    <ul class="gallery"></ul>
+  </div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
