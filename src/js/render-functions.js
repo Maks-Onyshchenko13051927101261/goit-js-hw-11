@@ -1,42 +1,45 @@
-import { refs } from "../main.js";
+export function imageTemplate(item) {
+  const {
+    webformatURL,
+    largeImageURL,
+    tags,
+    likes,
+    views,
+    comments,
+    downloads,
+  } = item;
 
-export function renderImages(items) {
-  const markup = ImageTrackList
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        likes,
-        views,
-        comments,
-        downloads
-      }) => {
-        return `<li class="gallery-item">
-        <a class="gallery-link" href="${largeImageURL}">
-          <img class="gallery-image" src="${webformatURL}" alt="${tags}">
-            <div class="gallery-image-stats">
-            <ul class="gallery-image-stats-list">
-              <li class="gallery-image-stats-item">
-                <p class="gallery-image-stats-title">Likes</p>
-                <p class="gallery-image-stats-text">${likes}</p>
+  return `<li class="gallery-item">
+          <a class="gallery-link" href="${largeImageURL}" onclick="return false;">
+            <img
+              class="gallery-image"
+              src="${webformatURL}"
+              alt="${tags}"
+            />
+          </a>
+          <div class="gallery-wrapper">
+            <ul class="gallery-group">
+              <li class="gallery-list">
+                <h2 class="gallery-subtitle">Likes</h2>
+                <p class="gallery-txt">${likes}</p>
               </li>
-              <li class="gallery-image-stats-item">
-                <p class="gallery-image-stats-title">Views</p>
-                <p class="gallery-image-stats-text">${views}</p>
+              <li class="gallery-list">
+                <h2 class="gallery-subtitle">Views</h2>
+                <p class="gallery-txt">${views}</p>
               </li>
-              <li class="gallery-image-stats-item">
-                <p class="gallery-image-stats-title">Comments</p>
-                <p class="gallery-image-stats-text">${comments}</p>
+              <li class="gallery-list">
+                <h2 class="gallery-subtitle">Comments</h2>
+                <p class="gallery-txt">${comments}</p>
               </li>
-              <li class="gallery-image-stats-item">
-                <p class="gallery-image-stats-title">Downloads</p>
-                <p class="gallery-image-stats-text">${downloads}</p>
+              <li class="gallery-list">
+                <h2 class="gallery-subtitle">Downloads</h2>
+                <p class="gallery-txt">${downloads}</p>
               </li>
             </ul>
           </div>
-        </a>
-      </li>`;
-      })
-    .join("");
-  refs.gallery.insertAdjacentHTML("beforeend", markup);
+        </li>`;
+}
+
+export function imagesTemplate(arr) {
+  return arr.map(imageTemplate).join('');
 }

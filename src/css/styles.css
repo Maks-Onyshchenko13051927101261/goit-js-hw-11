@@ -1,86 +1,124 @@
-* {
-  font-family:Verdana, Geneva, Tahoma, Roboto, sans-serif;
-  color: #434455;
-  background-color: #fff;
+body {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2e2f42;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.form {
+  margin-top: 36px;
+  margin-left: 550px;
+  margin-bottom: 32px;
+  width: 371px;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+input {
+  width: 270px;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding: 0px;
 }
 
-ul,
-ol {
-  list-style-type: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
+input:hover {
+  border: 1px solid #000000;
 }
 
 button {
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.search-input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  border: 1px solid #808080;
-  background-color: transparent;
-  outline: transparent;
-  padding-left: 16px;
-  transition: background-color 250mcubic-bezier(0.4, 0, 0.2, 1); 
-}
-.search-input:hover {
-  border: 1px solid #000000;
-}
-.search-input:focus {
-  border: 1px solid #4e75ff;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #ffffff;
   background-color: #4e75ff;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
-.button:hover,
-.button:focus {
+
+button:hover {
   background-color: #6c8cff;
 }
 
-.gallery{
+.gallery {
+  padding: 0px;
+  margin-left: 50px;
+  margin-right: 50px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 15px;
+}
+
+.gallery-item {
+  list-style: none;
+  margin: 0px;
+  width: 360px;
+  height: 230px;
+  border: 1px solid #808080;
+}
+
+.gallery-image {
+  display: block;
+  width: 360px;
+  height: 182px;
+}
+
+.gallery-wrapper {
+  width: 360px;
+  height: 48px;
+  padding: 0px;
+}
+
+.gallery-group {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+  padding-left: 20px;
+  padding-right: 25px;
+}
+
+.gallery-subtitle {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2e2f42;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.gallery-txt {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2e2f42;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 100px;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-mask: linear-gradient(90deg, #000 70%, #0000 0) 0/20%;
+  background:
+    linear-gradient(#000 0 0) 0/0% no-repeat #ddd;
+  animation: l4 2s infinite steps(6);
+}
+
+@keyframes l4 {
+  100% {
+    background-size: 120%
+  }
+}
+
+.hidden {
+  display: none;
 }

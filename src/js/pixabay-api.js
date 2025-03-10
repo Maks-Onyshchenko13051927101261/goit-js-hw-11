@@ -1,19 +1,15 @@
-export function searchFetch(query) {
-  const BASE_URL = "https://pixabay.com";
-  const END_POINT = "/api/";
-  const KAY = "49101285-dc6548589a888be5ea0d6fe27";
-  const searchProps = new URLSearchParams({
-    keys: KAY,
-    q: query,
-    image_type: "photo"
-    orientation: "horizontal",
-    safesearch: "true",
-  });
-  const url = `${BASE_URL}${END_POINT}?${searchProps}`;
-  return fetch(url).then((response) => {
-    if (!response.ok) {
-      throw new Error("Error fetching data");
-    }
-    return response.json();
-  });
+import axios from 'axios';
+
+export function getAllImages(massege) {
+  const baseURL = 'https://pixabay.com/api/';
+
+  const params = {
+    key: '49101285-dc6548589a888be5ea0d6fe27',
+    q: `${massege}`,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: 'true',
+  };
+
+  return axios.get(baseURL, { params }).then(res => res.data.hits);
 }
